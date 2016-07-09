@@ -3,7 +3,7 @@ import simplejson as json
 import requests
 import io
 
-import sauron
+import fileValidators
 
 dataListUrl = "http://data.sandiego.gov/api/3/action/current_package_list_with_resources"
 
@@ -23,7 +23,7 @@ file = pd.read_csv(io.StringIO(s.decode('utf-8')))
 
 
 
-validator = dispoCodeValidator()
-validator.is_valid(file)
+validator = fileValidators.dispoCodeValidator()
+print(validator.is_valid(file))
 
 

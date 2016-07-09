@@ -1,4 +1,6 @@
 import sauron
+import pandas_validator as pv
+
 baseDFValidator = sauron.baseDFValidator
 
 
