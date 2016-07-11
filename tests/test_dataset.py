@@ -8,11 +8,15 @@ import sdk.dataset as dataset
 import unittest
 
 
+## Tests that apply to all datasets;
 
 class BaseDatasetTest(unittest.TestCase):
+
+    datasetID = "d389196b-991d-4b93-afab-cb8c6c9bfd56"
+
     def setUp(self):
         #print("setUp")
-        self.dataset = dataset.Dataset("d389196b-991d-4b93-afab-cb8c6c9bfd56")
+        self.dataset = dataset.Dataset(self.datasetID)
         #self.dataset.loadResourceData()
 
     def test_is_published(self):
@@ -26,6 +30,10 @@ class BaseDatasetTest(unittest.TestCase):
         #print('tearDown')
         del self.dataset
         self.dataset = None
+
+
+class SpecialEventsDatasetTest(BaseDatasetTest):
+    datasetID = "d389196b-991d-4b93-afab-cb8c6c9bfd56"
 
 
 
