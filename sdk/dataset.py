@@ -4,7 +4,7 @@ import requests
 import io
 import sauron.sauron as sauron
 
-import resource
+import sdk.resource as resource
 
 class Dataset(object):
     def __init__(self, id):
@@ -24,3 +24,7 @@ class Dataset(object):
 
         #for g in metadata["groups"]:
             #self.groups.append(resource.Resource(g))
+
+    def loadResourceData(self):
+        for r in self.resources:
+            r.loadData()
