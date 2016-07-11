@@ -9,9 +9,9 @@ import unittest
 
 class PortalTest(unittest.TestCase):
     def setUp(self):
-        print('In setUp()')
-        dataListUrl = "http://data.sandiego.gov/api/3/action/current_package_list_with_resources"
-        dataList = requests.get(dataListUrl)
+        #print('In setUp()')
+        #dataListUrl = "http://data.sandiego.gov/api/3/action/current_package_list_with_resources"
+        #dataList = requests.get(dataListUrl)
         dataList = json.loads(dataList.text)
         dataList = json.loads(json.dumps(dataList['result']))[0]
 
